@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 
-export default function YatinScore() {
-  const [count, setCount] = useState(70);
-  const [name, setName] = useState("Sparsh");
-
+export default function YatinScore({ yatinScore, updateYatinScore }) {
   return (
     <div
       style={{
@@ -12,13 +9,13 @@ export default function YatinScore() {
         margin: "auto",
       }}
     >
-      <button onClick={() => setName("Yatin")}>Decrement</button>
+      <button onClick={() => updateYatinScore(yatinScore - 1)}>Decrement</button>
 
       <p>
-        Yatin's Score <span style={{ color: "red" }}> {name} </span>
+        Yatin's Score <span style={{ color: "red" }}> {yatinScore} </span>
       </p>
 
-      <button onClick={() => setName("Ujjwal")}>Increment</button>
+      <button onClick={() => updateYatinScore(yatinScore + 1)}>Increment</button>
     </div>
   );
 }
